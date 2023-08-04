@@ -15,7 +15,7 @@ jobs:
         uses: hashicorp/vault-action@v2
         with:
             url: ${{ secrets.VAULT_ADDR }}
-            method: network_approle
+            method: approle
             namespace: admin
             roleId: ${{ secrets.VAULT_ROLE_ID }}
             secretId: ${{ secrets.VAULT_SECRET_ID }}
