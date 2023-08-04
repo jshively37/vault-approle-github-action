@@ -1,0 +1,26 @@
+name: "Terraform Plan Run Only"
+
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  terraform:
+    name: "Import Secrets"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Vault Login using AppRole
+        uses: hashicorp/vault-action@v2
+        with:
+            url: ${{ secrets.VAULT_ADDR }}
+            method: approle
+            path: auth/approle
+            namespace: admin
+            roleId: ${{ secrets.VAULT_ROLE_ID }}
+            secretId: ${{ secrets.VAULT_SECRET_ID }}
+
+
+
+
