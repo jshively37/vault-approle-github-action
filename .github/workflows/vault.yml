@@ -20,6 +20,7 @@ jobs:
             namespace: admin
             roleId: ${{ secrets.VAULT_ROLE_ID }}
             secretId: ${{ secrets.VAULT_SECRET_ID }}
+            secrets: kv/network_devices/core_router01
 
 
 
