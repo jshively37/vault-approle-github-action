@@ -1,11 +1,11 @@
-name: "Terraform Plan Run Only"
+name: "Vault AppRole"
 
 on:
   push:
     branches-ignore:
       - main
 jobs:
-  terraform:
+  vault:
     name: "Import Secrets"
     runs-on: ubuntu-latest
     steps:
