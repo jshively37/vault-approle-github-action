@@ -16,11 +16,11 @@ jobs:
         with:
             url: ${{ secrets.VAULT_ADDR }}
             method: approle
-            # path: auth/approle/role/my-role/secret-id
             namespace: admin
             roleId: ${{ secrets.VAULT_ROLE_ID }}
             secretId: ${{ secrets.VAULT_SECRET_ID }}
-            secrets: kv/network_devices/core_router01
+            path: kv
+            secrets: network_devices/core_router01
 
 
 
